@@ -23,9 +23,9 @@ pipeline {
             }
         }
         stage('Push Docker image')
-        steps{
-            script{
-                docker.withRegistry('',Registry_Credintial){
+            steps{
+                script{
+                    docker.withRegistry('',Registry_Credintial){
                     docker_image.Push("$Image_name")
                 }
             }
