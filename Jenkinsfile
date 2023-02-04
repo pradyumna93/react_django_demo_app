@@ -10,25 +10,13 @@ pipeline {
     stages{
         stage('Git Checkout SCM'){
             steps{
-               git branch: 'main', url: 'https://github.com/pradyumna93/react_django_demo_app.git'
+               git url: 'https://github.com/pradyumna93/react_django_demo_app.git'
             }
         }
         stage('Build Docker Image'){
-            steps{
-                script{
-                    docker_image = docker.build "${Image_Name}"
-                }
+            steps {
+                sh "docker build -t pradyumna93/Djano_App:1.0"
             }
-        }
-        stage('Push Docker image'){
-            steps{
-                script{
-                    docker.withRegistry('',Registry_Credintial){
-                    docker_image.Push("$Image_name")
-                }
-            }
-        }
-        }
     }
     
 }
