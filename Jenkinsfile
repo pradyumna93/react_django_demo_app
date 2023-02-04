@@ -10,7 +10,7 @@ pipeline {
     stages{
         stage('Git Checkout SCM'){
             steps{
-               withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'git')]) {
+               withCredentials([gitUsernamePassword(credentialsId: 'github')]) {
     // some block
 } 
             }
