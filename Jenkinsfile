@@ -8,10 +8,9 @@ pipeline {
         Registry_Credintial = "dockerhub"
     }
     stages{
-        stage('Git Checkout SCM'){
+        stage('Git Clone Repository'){
             steps{
-               withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'git')]) {
-    // some block
+               git url: 'https://github.com/pradyumna93/react_django_demo_app.git', branch: 'main'
 } 
             }
         }
