@@ -10,7 +10,7 @@ pipeline {
     stages{
         stage('Git Checkout SCM'){
             steps{
-               git credentials: 'github',
+               git credentialsId: 'github',
                url: 'https://github.com/pradyumna93/react_django_demo_app.git',
                branch: 'main' 
             }
