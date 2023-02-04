@@ -21,7 +21,15 @@ pipeline {
                     docker_image = docker.build "${Image_Name}"
                 }
             }
-    }
+        }
+        stage('Push Docker image')
+        steps{
+            script{
+                docker.withRegistry('',Registry_Credintial){
+                    docker_image.Push("$Image_name")
+                }
+            }
+        }
     }
     
 }
