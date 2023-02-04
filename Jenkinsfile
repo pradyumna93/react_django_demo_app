@@ -15,5 +15,13 @@ pipeline {
                branch: 'main' 
             }
         }
+        stage('Build Docker Image'){
+            steps{
+                script{
+                    docker_image = docker.build "${Image_Name}"
+                }
+            }
     }
+    }
+    
 }
