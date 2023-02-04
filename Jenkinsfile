@@ -4,14 +4,9 @@ pipeline {
     stages{
         stage('Clone repository'){
             steps{
-               git url: 'https://github.com/pradyumna93/react_django_demo_app.git'
+               git url: 'https://github.com/pradyumna93/awesome-repo.git'
             }
         }
-        stage('Build Docker Image'){
-            steps {
-                sh "docker build"
-            }
-    }
     
 }
 }
